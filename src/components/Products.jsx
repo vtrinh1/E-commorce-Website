@@ -13,7 +13,7 @@ const Container = styled.div`
 function Products() {
   return (
     <Container>
-      {popularProducts.map(item => (
+      {popularProducts.map((item) => (
         <ProductItem item={item} key={item.id}/>
       ))}
     </Container>
