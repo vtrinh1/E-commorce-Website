@@ -1,5 +1,6 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import {sliderItems} from '../data'
 import { mobile } from '../responsive'
@@ -30,6 +31,12 @@ const Arrow = styled.div`
   margin: auto;
   opacity: 0.5;
   z-index: 2;
+  transition: all 300ms ease;
+
+  :hover {
+    background-color: #fff;
+    opacity: 0.8;
+  }
 `
 
 const Wrapper = styled.div`
@@ -70,11 +77,19 @@ const Description = styled.p`
   font-weight: 500;
   letter-spacing: 3px;
 `
-const Button = styled.button`
+const Button = styled(Link)`
   padding: 10px;
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
+  transition: all 300ms ease;
+  text-decoration: none;
+  color: black;
+  border: 1px solid;
+
+  :hover {
+    background-color: #fff;
+  }
 `
 
 
@@ -104,7 +119,7 @@ function Slider() {
           <InfoContainer>
             <Title>{item.title}</Title>
             <Description>{item.description}</Description>
-            <Button>SHOP NOW</Button>
+            <Button to='productList'>SHOP NOW</Button>
           </InfoContainer>
         </Slide>
       ))}

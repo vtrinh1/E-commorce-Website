@@ -98,6 +98,10 @@ const AmountContainer = styled.div`
   ${mobile({ width: "100%" })};
 `
 
+const AmountButton = styled.div`
+  cursor: pointer;
+`
+
 const Amount = styled.span`
   width: 30px;
   height: 30px;
@@ -155,9 +159,13 @@ function Product() {
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
+              <AmountButton>
+                <Remove />
+              </AmountButton>
               <Amount>1</Amount>
-              <Add />
+              <AmountButton>
+                <Add />
+              </AmountButton>
             </AmountContainer>
             <Button>ADD TO CART</Button>
           </AddContainer>

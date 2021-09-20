@@ -4,6 +4,7 @@ import SearchIcon from '@material-ui/icons/Search'
 import { Badge } from '@material-ui/core'
 import { ShoppingCartOutlined } from '@material-ui/icons'
 import { mobile } from '../responsive'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
   height: 60px;
@@ -47,8 +48,11 @@ const Center = styled.div`
   text-align: center;
 `
 
-const Logo = styled.h1`
+const Logo = styled(Link)`
   font-weight: bold;
+  text-decoration: none;
+  color: black;
+  font-size: 32px;
   ${mobile({ fontSize: "24px" })};
 `
 
@@ -60,10 +64,12 @@ const Right = styled.div`
   ${mobile({ flex: 2, justifyContent: "center" })};
 `
 
-const MenuItem = styled.div `
+const MenuItem = styled(Link) `
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  text-decoration: none;
+  color: black;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })};
 `
 
@@ -79,15 +85,15 @@ function Navbar() {
             </SearchContainer>
           </Left>
           <Center>
-            <Logo>
+            <Logo to='/'>
               TRINHS.
             </Logo>
           </Center>
           <Right>
-            <MenuItem>REGISTER</MenuItem>
-            <MenuItem>SIGN IN</MenuItem>
-            <MenuItem>
-              <Badge badgeContent={4} color="primary">
+            <MenuItem to='register'>REGISTER</MenuItem>
+            <MenuItem to='login'>SIGN IN</MenuItem>
+            <MenuItem to='cart'>
+              <Badge badgeContent={3} color="primary">
                 <ShoppingCartOutlined />
               </Badge>  
             </MenuItem>

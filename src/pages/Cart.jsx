@@ -34,6 +34,11 @@ const TopButton = styled.button`
   border: ${props => props.type === "filled" && "none"};
   background-color: ${props => props.type === "filled" ? "black" : "transparent"};
   color: ${props => props.type === "filled" && "#fff"};
+  transition: all 200ms ease;
+
+  :hover{
+    background-color: ${props => props.type === "filled" ? "gray" : "#f8f4f4"};
+  }
 `
 
 const TopTexts = styled.div`
@@ -110,6 +115,11 @@ const ProductAmountContainer = styled.div`
   align-items: center;
   margin-bottom: 20px;
 `
+
+const ProductAmountButton = styled.div`
+  cursor: pointer;
+`
+
 const ProductAmount = styled.div`
   font-size: 24px;
   margin: 5px;
@@ -161,6 +171,11 @@ const Button = styled.button`
   font-weight: 600;
   border: none;
   cursor: pointer;
+  transition: all 200ms ease;
+
+  :hover {
+    background-color: gray;
+  }
 `
 
 function Cart() {
@@ -173,7 +188,7 @@ function Cart() {
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
           <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
+            <TopText>Shopping Bag(3)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
           <TopButton type="filled">CHECKOUT NOW</TopButton>
@@ -192,9 +207,13 @@ function Cart() {
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
-                  <Add />
+                  <ProductAmountButton>
+                    <Add />
+                  </ProductAmountButton>
                   <ProductAmount>2</ProductAmount>
-                  <Remove />
+                  <ProductAmountButton>
+                    <Remove />
+                  </ProductAmountButton>
                 </ProductAmountContainer>
                 <ProductPrice>$ 30</ProductPrice>
               </PriceDetail>
@@ -212,9 +231,13 @@ function Cart() {
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
-                  <Add />
+                  <ProductAmountButton>
+                    <Add />
+                  </ProductAmountButton>
                   <ProductAmount>1</ProductAmount>
-                  <Remove />
+                  <ProductAmountButton>
+                    <Remove />
+                  </ProductAmountButton>
                 </ProductAmountContainer>
                 <ProductPrice>$ 20</ProductPrice>
               </PriceDetail>

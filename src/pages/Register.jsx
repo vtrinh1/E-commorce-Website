@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
   width: 100vw;
@@ -41,13 +42,19 @@ const Agreement = styled.span`
   margin: 20px 0px;
 `
 
-const Button = styled.button`
+const Button = styled(Link)`
   width: 40%;
   border: none;
   padding: 15px 20px;
   background-color: teal;
   color: #fff;
   cursor: pointer;
+  transition: all 300ms ease;
+  text-decoration: none;
+
+  :hover {
+    background-color: #00adad;
+  }
 `
 
 function Register() {
@@ -63,9 +70,9 @@ function Register() {
           <Input placeholder="password"/>
           <Input placeholder="confirm password"/>
           <Agreement>
-            By creating and account, I consent to the processing of my personal data in accordance with the <b>PRIVACY POLICY</b>
+            By creating an account, I consent to the processing of my personal data in accordance with the <b>PRIVACY POLICY</b>
           </Agreement>
-          <Button>CREATE</Button>
+          <Button to='/' >CREATE</Button>
         </Form>
       </Wrapper>
     </Container>

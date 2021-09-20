@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
 
@@ -31,15 +32,22 @@ const Info = styled.div`
 const Title = styled.h1`
   color: white;
   margin-bottom: 20px;
+  text-align: center;
 `
 
-const Button = styled.button`
+const Button = styled(Link)`
   border: none;
   padding: 10px;
   background-color: #fff;
   color: gray;
   cursor: pointer;
   font-weight: 600;
+  transition: all 300ms ease;
+  text-decoration: none;
+
+  :hover {
+    background-color: #ddd;
+  }
 `
 
 function CategoryItem({item}) {
@@ -48,7 +56,7 @@ function CategoryItem({item}) {
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        <Button>SHOP NOW</Button>
+        <Button to='productList'>SHOP NOW</Button>
       </Info>
     </Container>
   )

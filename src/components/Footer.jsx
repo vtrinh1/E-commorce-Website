@@ -23,7 +23,7 @@ const Description = styled.p`
 const SocialContainer = styled.div`
   display: flex;
 `
-const SocialIcon = styled.div`
+const SocialIcon = styled.a`
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -33,6 +33,12 @@ const SocialIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+  cursor: pointer;
+  transition: all 200ms ease;
+
+  :hover {
+    opacity: 0.7;
+  }
 `
 
 const Center = styled.div`
@@ -56,6 +62,7 @@ const List = styled.ul`
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
+  cursor: pointer;
 `
 
 const Right = styled.div`
@@ -84,16 +91,16 @@ function Footer() {
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui nobis ut, eius, nostrum eaque saepe modi dolores alias quaerat magni expedita reiciendis distinctio recusandae. Autem amet nesciunt deserunt unde quod?
         </Description>
         <SocialContainer>
-          <SocialIcon bg="3B5999">
+          <SocialIcon target="_blank" href="https://www.facebook.com/" bg="3B5999">
             <Facebook />
           </SocialIcon>
-          <SocialIcon bg="E4405F">
+          <SocialIcon target="_blank" href="https://www.instagram.com/"  bg="E4405F">
             <Instagram />
           </SocialIcon>
-          <SocialIcon bg="55ACEE">
+          <SocialIcon target="_blank" href="https://twitter.com/"  bg="55ACEE">
             <Twitter />
           </SocialIcon>
-          <SocialIcon bg="E60023">
+          <SocialIcon target="_blank" href="https://www.pinterest.com.au/"  bg="E60023">
             <Pinterest />
           </SocialIcon>
         </SocialContainer>
@@ -103,8 +110,8 @@ function Footer() {
         <List>
           <ListItem>Home</ListItem>
           <ListItem>Cart</ListItem>
-          <ListItem>Mens Fashion</ListItem>
-          <ListItem>Womens Fashion</ListItem>
+          <ListItem>Men's Fashion</ListItem>
+          <ListItem>Women's Fashion</ListItem>
           <ListItem>Accessories</ListItem>
           <ListItem>My Account</ListItem>
           <ListItem>Order Tracking</ListItem>
@@ -115,7 +122,7 @@ function Footer() {
       </Center>
       <Right>
         <Title>Contact</Title>
-        <ContactItem><Room style={{marginRight:"10px"}} />123 Sesame St, New York 992323</ContactItem>
+        <ContactItem><Room style={{marginRight:"10px"}} />123 Sesame St, Sydney 2000</ContactItem>
         <ContactItem><Phone style={{marginRight:"10px"}} /> +1 234 56 78</ContactItem>
         <ContactItem><MailOutline style={{marginRight:"10px"}} /> contact@trinhs.dev</ContactItem>
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png"/>
