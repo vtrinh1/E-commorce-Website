@@ -6,6 +6,7 @@ import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import { Add, Remove } from '@material-ui/icons'
 import { medium } from '../responsive'
+import img from '../images/productImg.jpg'
 
 const Container = styled.div`
 
@@ -133,7 +134,7 @@ function Product() {
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+          <Image src={img} />
         </ImgContainer>
         <InfoContainer>
           <Title>Denim Jumpsuit</Title>

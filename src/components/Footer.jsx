@@ -2,6 +2,7 @@ import { Facebook, Instagram, MailOutline, Phone, Pinterest, Room, Twitter } fro
 import React from 'react'
 import styled from 'styled-components'
 import { medium } from '../responsive'
+import img from '../images/paymentImg.png'
 
 const Container = styled.div`
   display: flex;
@@ -124,7 +125,7 @@ function Footer() {
         <ContactItem><Room style={{marginRight:"10px"}} />123 Sesame St, Sydney 2000</ContactItem>
         <ContactItem><Phone style={{marginRight:"10px"}} /> +1 234 56 78</ContactItem>
         <ContactItem><MailOutline style={{marginRight:"10px"}} /> contact@trinhs.dev</ContactItem>
-        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png"/>
+        <Payment src={img}/>
       </Right>
     </Container>
   )
