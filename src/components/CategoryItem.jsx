@@ -56,7 +56,7 @@ function CategoryItem({item}) {
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        <Button to='productList'>SHOP NOW</Button>
+        <Button to={`/products/${item.cat}`}>SHOP NOW</Button>
       </Info>
     </Container>
   )
